@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${ramen.comment}
           </p>
             `
+            addDeleteButton(ramen)
         })
     }
 
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${ramenObject.comment}
           </p>
             `
+            addDeleteButton()
         })
     }
 
@@ -89,6 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function editFeaturedRamen(e){
         e.preventDefault()
+
+        const newRatingObj = {
+            rating:e.target.rating.value,
+            comment:e.target.comment.value
+        }
+
+        const newRating = document.getElementById('rating-display')
+        const newComment = document.getElementById('comment-display')
+
+        newRating.textContent = newRatingObj.rating
+        newComment.textContent = newRatingObj.comment
     }
 
     newRamenForm.addEventListener('submit', addNewRamen)
@@ -97,4 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderMenu()
     renderFirstRamen()
+
+    function addDeleteButton(ramen){
+        const deleteButton = document.createElement('button')
+        deleteButton.textContent = 'DELETE'
+        ramenDetail.appendChild(deleteButton)
+        deleteButton.addEventListener('click', () => {
+            const ramenImage = document.getElementById(ramen.id)
+            ramenImage.remove()
+        })
+    }
 })
