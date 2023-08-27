@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ramenMenu = document.getElementById('ramen-menu')
     const ramenDetail = document.getElementById('ramen-detail')
+    const ratingDelete = document.getElementById('rating-delete')
 
     function renderMenu(){
         fetch('http://localhost:3000/ramens')
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ramenMenu.appendChild(ramenImage)
 
                 ramenImage.addEventListener('click', () => {
+                    ratingDelete.remove()
                     renderRamen(ramen)
                 })
             })
