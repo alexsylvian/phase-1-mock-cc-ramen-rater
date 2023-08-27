@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
           <h3>Rating:</h3>
           <p>
-            <span id='rating-display'>Insert rating here</span> / 10
+            <span id='rating-display'>${ramen.rating}</span> / 10
           </p>
           <h3>Comment:</h3>
           <p id='comment-display'>
-            Insert comment here
+            ${ramen.comment}
           </p>
             `
         })
