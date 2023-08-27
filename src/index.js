@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ramenMenu = document.getElementById('ramen-menu')
     const ramenDetail = document.getElementById('ramen-detail')
     const ratingDelete = document.getElementById('rating-delete')
+    const newRamenForm = document.getElementById('new-ramen')
 
     function renderMenu(){
         fetch('http://localhost:3000/ramens')
@@ -67,6 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         })
     }
+
+    function addNewRamen(e){
+        e.preventDefault()
+        const newRamenObj = {
+            name:e.target.name.value,
+            restaurant:e.target.restaurant.value,
+            image:e.target.image.value,
+            rating:e.target.rating.value,
+            comment:e.target.comment.value
+        }
+        const newRamenImage = document.createElement('img')
+        newRamenImage.src = newRamenObj.image
+        newRamenImage.addEventListener('click', () => {
+            renderRamen(newRamenObj)
+        })
+        ramenMenu.appendChild(newRamenImage)
+    }
+
+    newRamenForm.addEventListener('submit', addNewRamen)
 
     renderMenu()
     renderFirstRamen()
