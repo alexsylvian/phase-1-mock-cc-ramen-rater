@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ramenDetail = document.getElementById('ramen-detail')
     const ratingDelete = document.getElementById('rating-delete')
     const newRamenForm = document.getElementById('new-ramen')
+    const editFeaturedRamenForm = document.getElementById('edit-ramen')
 
     function renderMenu(){
         fetch('http://localhost:3000/ramens')
@@ -86,7 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ramenMenu.appendChild(newRamenImage)
     }
 
+    function editFeaturedRamen(e){
+        e.preventDefault()
+    }
+
     newRamenForm.addEventListener('submit', addNewRamen)
+
+    editFeaturedRamenForm.addEventListener('submit', editFeaturedRamen)
 
     renderMenu()
     renderFirstRamen()
