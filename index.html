@@ -54,11 +54,12 @@
 
   <form id="edit-ramen">
     <h4>Update the Featured Ramen</h4>
+    <input type="hidden" name="ramenId" id="ramen-id-input" value="some-ramen-id" />
     <label for="rating">Rating: </label>
     <input type="number" name="rating" id="new-rating" />
     <label for="comment">Comment: </label>
     <textarea name="comment" id="comment"></textarea>
-    <input type="submit" value="Update" />
+    <input id="submit-delete" type="submit" value="Update" />
   </form>
 
 </body>

@@ -37,8 +37,16 @@
       "name": "Kojiro Red Ramen",
       "restaurant": "Ramen-Ya",
       "image": "./assets/ramen/kojiro.jpg",
-      "rating": 6,
-      "comment": "Perfect for a cold night."
+      "rating": "",
+      "comment": ""
+    },
+    {
+      "name": "Snickers",
+      "restaurant": "",
+      "image": "https://pbs.twimg.com/profile_images/1570536314637881346/S9qym2nJ_400x400.jpg",
+      "rating": "",
+      "comment": "",
+      "id": 9
     }
   ]
 }
